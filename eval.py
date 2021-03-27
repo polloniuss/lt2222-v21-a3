@@ -24,14 +24,12 @@ if __name__ == "__main__":
     processed_test_data = pre_process(args.test_data)
     
     #Create evaluation instances compatible with the training instances.
-    feat_classes = instances(processed_test_data[0], processed_test_data[1])
-    test_features = torch.from_numpy(feat_classes[0])
-    test_classes = torch.from_numpy(feat_classes[1])
+    test_features, test_classes = instances(processed_test_data[0], processed_test_data[1])
     
     #Use the model to predict instances.
-    pred_instances = train_model(test_features.float())
-    predicted = pred_instances.argmax(dim=1).numpy()
-    truth = test_classes.numpy()
+    pred_instances = train_model(test_features.unsqueeze(0))
+    predicted = pd.Series(pred_instances.squeeze(0).argmax(dim=1).numpy())
+    truth = pd.Series(test_classes.numpy())
     
     #Write the text with the predicted (as opposed to the real) vowels back into an output file.
     file_text = []
