@@ -35,14 +35,8 @@ It returns a matrix `np.array(gr)` and a matrix `np.array(gt)`.
     
 ## Part 2
 
-### Write eval.py and add it to the repository.  What eval.py will do from the command line:
+### Write eval.py and add it to the repository. 
 
-Load a model produced by train.py. (Take a look at model.py.)
-Load the test data.
-Create evaluation instances compatible with the training instances.  (A simplifying assumption for the purposes of the assignment: assuming that the neighbouring vowels are known as though the Fairy hadn't stolen them.)
-Use the model to predict instances.
-Write the text with the predicted (as opposed to the real) vowels back into an output file.
-Print the accuracy of the model to the terminal.
 
 ## Part 3
 
