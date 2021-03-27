@@ -1,5 +1,6 @@
 import argparse
 import numpy as np
+import pandas as pd
 import torch
 import train
 from train import a as pre_process
@@ -27,9 +28,12 @@ if __name__ == "__main__":
     test_features, test_classes = instances(processed_test_data[0], processed_test_data[1])
     
     #Use the model to predict instances.
-    pred_instances = train_model(test_features.unsqueeze(0))
-    predicted = pd.Series(pred_instances.squeeze(0).argmax(dim=1).numpy())
-    truth = pd.Series(test_classes.numpy())
+    tf = torch.FloatTensor(test_features)
+    tc = torch.Tensor(test_classes)
+    
+    pred_instances = train_model(tf)
+    predicted = pd.Series(pred_instances.argmax(dim=1).numpy())
+    truth = pd.Series(tc.numpy())
     
     #Write the text with the predicted (as opposed to the real) vowels back into an output file.
     file_text = []
