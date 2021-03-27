@@ -27,14 +27,10 @@ It returns a matrix `np.array(gr)` and a matrix `np.array(gt)`.
 
 #### Command-line arguments
 
-- parser.add_argument("--k", dest="k", type=int, default=200)
-* The optional argument `k` defines the hiddensize (default = 200).*
-- parser.add_argument("--r", dest="r", type=int, default=100)
-* The optional argument `r` defines the number of epochs (default = 100). *
-- parser.add_argument("m", type=str)
-* The argument `m` defines the file used to train the model. *
-- parser.add_argument("h", type=str)
-* The argument `h` defines the file used to save the model, it's a PATH. *
+- The optional argument `k` defines the hiddensize (default = 200).
+- The optional argument `r` defines the number of epochs (default = 100).
+- The argument `m` defines the file used to train the model.
+- The argument `h` defines the file used to save the model, it's a PATH.
 
     
 ## Part 2
