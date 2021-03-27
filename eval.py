@@ -24,7 +24,9 @@ if __name__ == "__main__":
     processed_test_data = pre_process(args.test_data)
     
     #Create evaluation instances compatible with the training instances.
-    test_features, test_classes = instances(processed_test_data[0], processed_test_data[1])
+    feat_classes = instances(processed_test_data[0], processed_test_data[1])
+    test_features = torch.from_numpy(feat_classes[0])
+    test_classes = torch.from_numpy(feat_classes[1])
     
     #Use the model to predict instances.
     pred_instances = train_model(test_features.float())
