@@ -45,7 +45,7 @@ if __name__ == "__main__":
     #Create evaluation instances compatible with the training instances.
     processed_train_data = pre_process(args.train_data)
     correct_len = len(processed_train_data[1])
-    test_features, test_classes = alter_b(processed_test_data[0], processed_test_data[1])
+    test_features, test_classes = alter_b(processed_test_data[0], processed_test_data[1], correct_len)
     
     #Use the model to predict instances.
     tf = torch.from_numpy(test_features)
