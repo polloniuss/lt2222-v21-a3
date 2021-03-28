@@ -19,7 +19,7 @@ def alter_b(u, p, correct_len):
         
         h2 = vowels.index(u[v+2])
         gt.append(h2)
-        r = np.concatenate([alter_g(x, pn correct_len) for x in [u[v], u[v+1], u[v+3], u[v+4]]])
+        r = np.concatenate([alter_g(x, p, correct_len) for x in [u[v], u[v+1], u[v+3], u[v+4]]])
         gr.append(r)
 
     return np.array(gr), np.array(gt)
