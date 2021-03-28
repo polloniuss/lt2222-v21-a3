@@ -60,7 +60,7 @@ if __name__ == "__main__":
     i = 0
     for ch in processed_test_data[0]:
         if ch in vowels:
-            file_text.append(vowels[i])
+            file_text.append(vowels[predicted[i]])
             i += 1
         else:
             file_text.append(ch)
