@@ -74,6 +74,6 @@ if __name__ == "__main__":
         if predicted[j] == truth[j]:
             tp_tn += 1
     
-    accuracy = len(tp_tn) / len(truth)
+    accuracy = tp_tn / len(truth)
     print("Accuracy of the model: ", accuracy)
     
