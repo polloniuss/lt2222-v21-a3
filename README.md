@@ -43,10 +43,29 @@ It returns a matrix `np.array(gr)` and a matrix `np.array(gt)`.
 ### Describe what you do in README.md.  Train and evaluate the following models:
 
 * Five different variations of the --k option, holding the --r option at its default.
+python train.py svtrain.lower.txt modeltest.pt --k 50 // accuracy: 11.212697263208714
+python train.py svtrain.lower.txt modeltest.pt --k 250 // accuracy: 8.229987025135028
+python train.py svtrain.lower.txt modeltest.pt --k 250 // accuracy: 5.128089073956731
+python train.py svtrain.lower.txt modeltest.pt --k 500 // accuracy: 15.056878187139796
+python train.py svtrain.lower.txt modeltest.pt --k 600 // accuracy: 11.073896382124861
+
 * Five different variations of the --r option, holding the --k option at its default.
+python train.py svtrain.lower.txt modeltest.pt --r 50 // accuracy: 9.412811924806132
+python train.py svtrain.lower.txt modeltest.pt --r 150 // accuracy: 9.592347847077638
+python train.py svtrain.lower.txt modeltest.pt --r 250 // accuracy: 5.398147309978577
+python train.py svtrain.lower.txt modeltest.pt --r 400 // accuracy: 9.729640022932319
+python train.py svtrain.lower.txt modeltest.pt --r 500 // accuracy: 4.568359433933798
+
 Include the best model and output text in your repository with its parameters.  Describe any patterns you see, if there are any.  Look at the output texts and make qualitative comments on the performances of the model.
 
+The best model has an accuracy of 15%, a hiddensize of 500 and a default epoch.
+The best model is "model.pt" and its output is "output.txt".
+There is several "à" in the text which not seems to be in the Swedish alphabet. It may be caused by a french influence. For example in this sentence:
+"à 17: 24, räg 10: à 9: 12, karn 9: 12 à 8 rdr"
+In french we would say "à 17:24" to say "at 17:24".
+Nevertheless, according to wikipedia, "á is a Swedish (old-fashioned) letter". Then my understanding might be wrong as it can be an old letter mistranslated.
 
+However I'm unfamiliar with Swedish, and even with Google Translate's help, I'm unable to imagine how the word was supposed to be accentuated and what it currently means.
 
 ## Bonuses
 
